@@ -26,7 +26,7 @@ at each algorithm iteration (e.g. Bellman-Ford). “Dense” and “mixed” fro
 when most/few graph vertices belong to the frontier. A detailed description of VGL frontier 
 representations will be provided in the following sections.
 
-![Branching]({{site.baseurl}}/assets/img/data_abstractions.png)
+![Branching]({{site.url}}/assets/img/data_abstractions.png)
 
 #### Vertices Array
 The VerticesArray abstraction allows storing information about graph vertices,
@@ -46,9 +46,12 @@ pattern for each vector instruction, which loads information about graph edges.
 #### Advance
 
 The advance abstractions is the main tool of traversing graph in VGL. 
-The advance input consists of a graph, an input frontier, and several user-defined handler functions: 
-vertex_preprocess_op, edge_op, vertex_postprocess_op. During its execution, the advance applies vertex_preprocess_op 
-to each vertex of input frontier, edge_op to each of its adjacent edges, and then vertex_postprocess_op to the vertex again. 
+
+*Input*: graph (in VectCSR format), frontier, vertex_preprocess_op, edge_op, vertex_postprocess_op.
+*Output*: None (user-defined lambda functions typically updates some VerticesArrays or EdgesArrays).
+
+During its execution, the advance applies vertex_preprocess_op to each vertex of input frontier, edge_op to each 
+of its adjacent edges, and then vertex_postprocess_op to the vertex again. 
 It is guaranteed that the execution of vertex_preprocess_op, edge-processing, and vertex_postprocess_op operations
 for each vertex are serialized. However, all edge op operations for each adjacent edge are executed in parallel.
 In addition, all frontier vertices can also be processed in parallel. 
@@ -57,7 +60,7 @@ Typically, vertex pre-process (or post-process) operations are used to initializ
 to be performed during edge traversals. For example, in the page rank algorithm, the edge op operation can be defined to accumulate new ranks, 
 while postprocess operations can be implemented to save the result using the input of dangling nodes and the coefficients of the page rank.
 
-![Branching]({{site.baseurl}}/assets/img/computational_abstractions.png)
+![Branching]({{site.url}}/assets/img/computational_abstractions.png)
 
 Prototype of the Advance abstraction and it's lambda-functions:
 ```c++
@@ -75,12 +78,12 @@ void advance(ExtendedCSRGraph<_TVertexValue, _TEdgeWeight> &_graph,
 
 #### Compute
 
-The compute abstraction applies a user-defined compute op operation to each vertex of the given 
-input frontier. Since all compute op operations can be independently executed, the compute 
-abstraction can be implemented in a straightforward way on NEC SX-Aurora TSUBASA architecture.
-Typicality, this abstraction is used for wide range of operations over graph vertices: 
+The compute abstraction can be used for wide range of operations over graph vertices: 
 initializing distances in shortest paths, implementing the “hook” phase in connected component
 algorithms, and many others.
+
+*Input*: graph (in VectCSR format), frontier, user-defined compute operation.
+*Output*: None (user-defined lambda function compute_op typically updates some VerticesArrays).
 
 Prototype of the Compute abstraction and it's lambda-functions:
 ```c++
@@ -93,12 +96,8 @@ void compute(ExtendedCSRGraph<_TVertexValue, _TEdgeWeight> &_graph,
 ```
 
 #### Reduce
-
-The reduce abstraction applies a user-defined reduce op operation (which returns some value) 
-to each vertex of a given input frontier. The returned values are reduced using additionally 
-specified reduction operation (SUM, MAX, MIN, AVG). This abstraction can be used for a 
-large number of applications: estimating future frontier size in BFS, calculating dangling 
-nodes inputs in page rank, etc. The conventional frameworks, such as Gunrock, implement 
+This Reduce abstraction can be used for a large number of applications: estimating future frontier size in BFS,
+calculating dangling nodes inputs in page rank, etc. The conventional frameworks, such as Gunrock, implement 
 functionality of the reduce abstraction using a combination of the compute abstraction
 (or its analogues) and user-defined operations with atomic instructions. 
 However, atomic operations on the SX-Aurora architecture easily becomes a performance 
@@ -106,6 +105,9 @@ bottleneck compared to GPUs and multicore CPUs. Thus, the atomic operation must 
 in the VGL framework. Furthermore, the reduction implementation for the SX-Aurora architecture 
 is much more efficient compared to highly-optimized thrust and "modernGPU" GPU libraries, 
 which is the main reason behind implementing the reduce as a separate abstraction in the VGL.
+
+*Input*: graph (in VectCSR format), frontier, user-defined reduction operation (reduce_op), reduction type.
+*Output*: reduction value.
 
 Prototype of the Reduce abstraction and it's lambda-functions:
 ```c++
@@ -128,10 +130,11 @@ _T reduce(VectCSRGraph &_graph,
 
 #### Generate New Frontier
 
-The generate new frontier abstraction allows a user to create a new frontier of graph vertices. 
-As an input, this abstraction receives a graph and user-defined condition.
-Then, this abstraction generates a new frontier of vertices for which the provided condition 
-returns IN_FRONTIER (true) flag.
+The generate new frontier abstraction allows a user to create a new subset of vertices,
+which can be later processed by other abstractions (advance, compute, reduce). 
+
+*Input*: graph (in VectCSR format), user-defined condition (cond).
+*Output*: frontier, which includes vertices with IN_FRONTIER flag returned from cond.
 
 Prototype of the Generate_new_frontier abstraction and it's lambda-functions:
 ```c++

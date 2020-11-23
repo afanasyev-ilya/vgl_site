@@ -25,7 +25,7 @@ email: afanasiev_ilya@icloud.com
 #  highest memory bandwidth of 1.2-1.5 TB/s, which allows to significantly solving various graph problems.
 #  VGL provides simple computational and data abstractions, which allow to easily express many graph algorithms.
 baseurl: "vgl_site" # the subpath of your site, e.g. /blog
-url: "https://afanasyev-ilya.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://afanasyev-ilya.github.io/vgl_site" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: afanasyev_ilya
 github_username:  afanasyev-ilya
 show_downloads: ["true"]

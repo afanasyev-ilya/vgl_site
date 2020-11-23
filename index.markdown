@@ -1,6 +1,5 @@
 ---
 layout: default
-menus: header
 ---
 
 VGL is a high-performance graph processing framework, designed for modern NEC SX-Aurora TSUBASA vector architecture. NEC SX-Aurora TSUBASA is equipped with world
@@ -9,9 +8,11 @@ VGL is a high-performance graph processing framework, designed for modern NEC SX
 
 After downloading VGL, check [installation](./installation.html) instructions.
 
-To get started, check VGL samples [BFS](./bfs_example.html) sample.
+To get started, check VGL [BFS](./bfs_example.html) sample.
 
 Check [documentation](./documentation.html)  to learn more about VGL computational and data abstractions.
 
 Check [performance](./performance.html) to learn more about VGL performance compared to existing multicore CPU and NVIDIA 
 GPU graph-processing frameworks and libraries.
+
+If you use VGL, please [cite](./cite.html) our works.

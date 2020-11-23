@@ -24,7 +24,7 @@ email: afanasiev_ilya@icloud.com
 #  VGL is a high-performance graph processing framework, designed for modern NEC SX-Aurora TSUBASA vector architecture. NEC SX-Aurora TSUBASA is equipped with world
 #  highest memory bandwidth of 1.2-1.5 TB/s, which allows to significantly solving various graph problems.
 #  VGL provides simple computational and data abstractions, which allow to easily express many graph algorithms.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "vgl_site" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: afanasyev_ilya
 github_username:  afanasyev-ilya

@@ -20,4 +20,5 @@ layout: default
 
 
 **Relationship between modern vector architectures and NVIDIA GPUs:**
+
 [5] Ilya V. Afanasyev, Vadim V. Voevodin, Vladimir V. Voevodin, Kazuhiko Komatsu, and Hiroaki Kobayashi. Analysis of relationship between SIMD-processing features used in NVIDIA GPUs and NEC SX-Aurora TSUABSA vector processors. In Parallel Computing Technologies. PaCT 2019, volume 11657 of Lecture Notes in Computer Science, pages 125–139. Springer, Cham, 2019.

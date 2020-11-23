@@ -2,8 +2,6 @@
 layout: default
 ---
 
-### VGL ideas
-
 The VGL framework is designed to easily implement various iterative graph algorithms, such as BFS (breadth-first search), SSSP(single source shortest paths), PR(page rank), CC(connected components), SCC(strongly connected components), and many others. 
 In VGL, 4 data abstractions and 4 computational abstractions are used to express iterative graph algorithms.
 

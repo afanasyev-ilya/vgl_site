@@ -2,6 +2,8 @@
 layout: default
 ---
 
+Please, use the following installation instructions to start using VGL.
+
 ## Requirements
 
 In order to use VGL you need to install:

@@ -47,8 +47,8 @@ pattern for each vector instruction, which loads information about graph edges.
 
 The advance abstractions is the main tool of traversing graph in VGL. 
 
-*Input*: graph (in VectCSR format), frontier, vertex_preprocess_op, edge_op, vertex_postprocess_op.
-*Output*: None (user-defined lambda functions typically updates some VerticesArrays or EdgesArrays).
+**Input**: graph (in VectCSR format), frontier, vertex_preprocess_op, edge_op, vertex_postprocess_op.
+**Output**: None (user-defined lambda functions typically updates some VerticesArrays or EdgesArrays).
 
 During its execution, the advance applies vertex_preprocess_op to each vertex of input frontier, edge_op to each 
 of its adjacent edges, and then vertex_postprocess_op to the vertex again. 
@@ -82,8 +82,8 @@ The compute abstraction can be used for wide range of operations over graph vert
 initializing distances in shortest paths, implementing the “hook” phase in connected component
 algorithms, and many others.
 
-*Input*: graph (in VectCSR format), frontier, user-defined compute operation.
-*Output*: None (user-defined lambda function compute_op typically updates some VerticesArrays).
+**Input**: graph (in VectCSR format), frontier, user-defined compute operation.
+**Output**: None (user-defined lambda function compute_op typically updates some VerticesArrays).
 
 Prototype of the Compute abstraction and it's lambda-functions:
 ```c++
@@ -106,8 +106,8 @@ in the VGL framework. Furthermore, the reduction implementation for the SX-Auror
 is much more efficient compared to highly-optimized thrust and "modernGPU" GPU libraries, 
 which is the main reason behind implementing the reduce as a separate abstraction in the VGL.
 
-*Input*: graph (in VectCSR format), frontier, user-defined reduction operation (reduce_op), reduction type.
-*Output*: reduction value.
+**Input**: graph (in VectCSR format), frontier, user-defined reduction operation (reduce_op), reduction type.
+**Output**: reduction value.
 
 Prototype of the Reduce abstraction and it's lambda-functions:
 ```c++
@@ -133,8 +133,8 @@ _T reduce(VectCSRGraph &_graph,
 The generate new frontier abstraction allows a user to create a new subset of vertices,
 which can be later processed by other abstractions (advance, compute, reduce). 
 
-*Input*: graph (in VectCSR format), user-defined condition (cond).
-*Output*: frontier, which includes vertices with IN_FRONTIER flag returned from cond.
+**Input**: graph (in VectCSR format), user-defined condition (cond).
+**Output**: frontier, which includes vertices with IN_FRONTIER flag returned from cond.
 
 Prototype of the Generate_new_frontier abstraction and it's lambda-functions:
 ```c++

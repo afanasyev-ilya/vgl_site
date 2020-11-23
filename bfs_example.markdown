@@ -22,6 +22,8 @@ and functions. It is important to specify all the required constants (from the p
 before including VGL header.
 
 ```c++
+#include "graph_library.h"
+```
 
 Third, implement your algorithm in main() function using VGL API.
 
@@ -105,3 +107,6 @@ int main(int argc, const char * argv[])
     }
 }
 ```
+
+Finally, compiler your vgl_sample.cpp file using the following commands:
+

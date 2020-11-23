@@ -12,3 +12,6 @@ After downloading VGL, check [installation](./installation.html) instructions.
 To get started, check VGL samples [BFS](./bfs_example.html) sample.
 
 Check [documentation](./documentation.html)  to learn more about VGL computational and data abstractions.
+
+Check [performance](./performance.html) to learn more about VGL performance compared to existing multicore CPU and NVIDIA 
+GPU graph-processing frameworks and libraries.

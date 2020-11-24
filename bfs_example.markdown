@@ -130,3 +130,4 @@ Finally, compiler your _my_bfs.cpp_ file using the following commands:
 
 > nc++ -lasl_openmp_i64 -o my_bfs_sx -I /path/to/asl/nec/ve/nlc/2.0.0/include/ -I /path/to/vgl/installation/VectorGraphLibrary/ -O3 -fopenmp -report-all -proginf -mparallel -mretain-list-vector -DASL_LIB_INT64 my_bfs.cpp
 
+

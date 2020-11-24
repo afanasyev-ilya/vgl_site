@@ -25,7 +25,9 @@ To start using VGL, please, follow the steps.
 
     - or .tar arcieve from this website:
 
-        > wget TODO
+        > wget https://afanasyev-ilya.github.io/vgl_site/VectorGraphLibrary.zip
+        >                               
+        > wget https://afanasyev-ilya.github.io/vgl_site/VectorGraphLibrary.tar.gz
 
 2. Check sample applications in _apps_ folder:
 

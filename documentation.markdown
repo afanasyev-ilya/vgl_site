@@ -24,7 +24,7 @@ at each algorithm iteration (e.g. Bellman-Ford). “Dense” and “mixed” fro
 when most/few graph vertices belong to the frontier. A detailed description of VGL frontier 
 representations will be provided in the following sections.
 
-![Branching]({{site.url}}/vgl_site/assets/img/data_abstractions.png)
+![Branching]({{site.url}}/assets/img/data_abstractions.png)
 
 #### Vertices Array
 The VerticesArray abstraction allows storing information about graph vertices,

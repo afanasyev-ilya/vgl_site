@@ -26,7 +26,7 @@ compared to 1000+ lines of code, typical for manually-optimized (hardwired) impl
 In addition, VGL user can be 
 
 
-###Using VGL
+### Using VGL
 
 1. Download and check [install](./installation.html) VGL.
 

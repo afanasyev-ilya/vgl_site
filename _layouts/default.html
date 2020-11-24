@@ -13,11 +13,19 @@
     {% endif %}
     <meta charset="UTF-8">
 
-{% seo %}
+<link rel="apple-touch-icon" sizes="180x180" href="{{site.url}}/assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{site.url}}/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{site.url}}/assets/img/favicon-16x16.png">
+<link rel="manifest" href="{{site.url}}/assets/img/site.webmanifest">
+<link rel="mask-icon" href="{{site.url}}/assets/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+
+  {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="shortcut icon" type="image/jpg" href="/favicon.jpg"/>
   </head>
   <body>
     <!-- Side navigation -->
@@ -25,6 +33,9 @@
       <a href="index">Home</a>
       <a href="installation">Installation</a>
       <a href="bfs_example">Samples</a>
+      <a href="documentation">Documentation</a>
+      <a href="performance">Performance</a>
+      <a href="cite">Cite</a>
     </div>
 
     <!-- Page content -->

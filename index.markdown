@@ -23,12 +23,19 @@ VGL automatically resolves the following issues:
 
 Thus, VGL user is able to express many graph algorithms using only 20-100 lines of code, 
 compared to 1000+ lines of code, typical for manually-optimized (hardwired) implementations.
-In addition, VGL user can be 
+In the meantime, VGL user may be completely unfamiliar with the principles of creating efficient programs for vector systems.
 
+
+### VGL cross-platform API
+
+In addition, VGL provides a unified interface for porting VGL-based implementations for other other architectures with 
+high-bandwidth memory, such as NVIDIA GPUs. Thus, VGL user can launch the developed implementations of graph algorithms 
+on different architectures, available to him, with only minor code modifications (inserting __device__ directive 
+before lambda functions).
 
 ### Using VGL
 
-1. Download and check [install](./installation.html) VGL.
+1. [Download](./VectorGraphLibrary.zip) and [install](./installation.html) VGL.
 
 2. Check VGL [samples(./bfs_example.html).
 

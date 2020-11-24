@@ -24,7 +24,7 @@ at each algorithm iteration (e.g. Bellman-Ford). “Dense” and “mixed” fro
 when most/few graph vertices belong to the frontier. A detailed description of VGL frontier 
 representations will be provided in the following sections.
 
-![Branching]({{site.url}}/assets/img/data_abstractions.png)
+![Branching]({{site.data_url}}/assets/img/data_abstractions.png)
 
 #### Vertices Array
 The VerticesArray abstraction allows storing information about graph vertices,
@@ -58,7 +58,7 @@ Typically, vertex pre-process (or post-process) operations are used to initializ
 to be performed during edge traversals. For example, in the page rank algorithm, the edge op operation can be defined to accumulate new ranks, 
 while postprocess operations can be implemented to save the result using the input of dangling nodes and the coefficients of the page rank.
 
-![Branching]({{site.url}}/assets/img/computational_abstractions.png)
+![Branching]({{site.data_url}}/assets/img/computational_abstractions.png)
 
 Prototype of the Advance abstraction and it's lambda-functions:
 ```c++

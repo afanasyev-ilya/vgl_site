@@ -29,6 +29,8 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.15.1)
       jekyll (>= 3.7, < 5.0)
+    jekyll-menus (0.6.1)
+      jekyll (>= 3.6, < 5.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.7.1)
@@ -47,6 +49,10 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
+    minima (2.5.1)
+      jekyll (>= 3.5, < 5.0)
+      jekyll-feed (~> 0.9)
+      jekyll-seo-tag (~> 2.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -68,8 +74,10 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.5)
   jekyll-feed (~> 0.12)
-  jekyll-theme-cayman
+  jekyll-menus
+  jekyll-theme-cayman (~> 0.1.1)
   kramdown-parser-gfm
+  minima (~> 2.5)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)

@@ -15,4 +15,4 @@ Check [documentation](./documentation.html)  to learn more about VGL computation
 Check [performance](./performance.html) to learn more about VGL performance compared to existing multicore CPU and NVIDIA 
 GPU graph-processing frameworks and libraries.
 
-If you use VGL, please [cite](./cite.html) our works.
+If you use VGL, please [cite](./cite.html) our works. 

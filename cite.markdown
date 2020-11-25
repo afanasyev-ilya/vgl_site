@@ -8,7 +8,7 @@ layout: default
 
 [2] Афанасьев И. В. Разработка прототипа высокопроизводительного графового фреймворка для векторной архитектуры NEC SX–Aurora TSUBASA. Вычислительные методы и программирование. – 2020. – Т. 21. – С. 290-305.
 
-**Scientific papers about different graph algorithms, implemented on NEC SX-Aurora TSUBASA architectures:**
+**Scientific papers about different graph algorithms, implemented on NEC SX-Aurora TSUBASA architecture:**
 
 [3] I.V. Afanasyev1, * and Vl.V. Voevodin. Developing Efficient Implementations of Connected Component Algorithms for NEC SX-Aurora TSUBASA.  Lobachevskii Journal of Mathematics
 

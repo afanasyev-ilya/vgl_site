@@ -10,13 +10,13 @@ layout: default
 
 **Scientific papers about different graph algorithms, implemented on NEC SX-Aurora TSUBASA architecture:**
 
-[3] I.V. Afanasyev1, * and Vl.V. Voevodin. Developing Efficient Implementations of Connected Component Algorithms for NEC SX-Aurora TSUBASA.  Lobachevskii Journal of Mathematics
+[3] I.V. Afanasyev and Vl.V. Voevodin. Developing Efficient Implementations of Connected Component Algorithms for NEC SX-Aurora TSUBASA.  Lobachevskii Journal of Mathematics
 
 [4] I.V. Afanasyev, V.V. Voevodin, Vl. V. Voevodin, Kazuhiko Komatsu, and Hiroaki Kobayashi. Developing efficient implementations of shortest paths and page rank algorithms for NEC SX-Aurora TSUBASA architecture. Lobachevskii Journal of Mathematics, 40(11):1753–1762, 2019.
 
 [5] I.V. Afanasyev, A.S. Antonov, D.A. Nikitenko, V.V. Voevodin, V.V. Voevodin, Komatsu Kazuhiko, Watanabe Osamu, Musa Akihiro, and Kobayashi Hiroaki. Developing efficient implementations of bellman–ford and forward-backward graph algorithms for NEC SX-ACE. Supercomputing Frontiers and Innovations, 5(3):65–69, 2018.
 
-[6] I.V. Afanasyev  et al. Developing an Efficient Vector-Friendly Implementation of the Breadth-First Search Algorithm for NEC SX-Aurora TSUBASA //International Conference on Parallel Computational Technologies. – Springer, Cham, 2020. – С. 131-145.
+[6] I.V. Afanasyev  et al. Developing an Efficient Vector-Friendly Implementation of the Breadth-First Search Algorithm for NEC SX-Aurora TSUBASA. International Conference on Parallel Computational Technologies, Springer, Cham, 2020, С. 131-145.
 
 
 

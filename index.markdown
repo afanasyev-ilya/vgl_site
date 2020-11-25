@@ -29,8 +29,8 @@ In the meantime, VGL user may be completely unfamiliar with the principles of cr
 ### VGL cross-platform API
 
 In addition, VGL provides a unified interface for porting VGL-based implementations for other other architectures with 
-high-bandwidth memory, such as NVIDIA GPUs. Thus, VGL user can launch the developed implementations of graph algorithms 
-on different architectures, available to him, with only minor code modifications (inserting __device__ directive 
+high-bandwidth memory, such as NVIDIA GPUs. Using cross-platform API a VGL user can launch graph algorithms implementations
+on different architectures with only minor code modifications (for example inserting __device__ directive 
 before lambda functions).
 
 ### Using VGL

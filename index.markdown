@@ -5,7 +5,7 @@ layout: default
 **VGL** is a **high-performance graph processing framework**, designed for modern **NEC SX-Aurora 
 TSUBASA** vector architecture. 
 NEC SX-Aurora TSUBASA is equipped with world highest memory bandwidth of 1.2-1.5 TB/s,
-which allows to significantly accelerate solving graph-processing.
+which allows to significantly accelerate graph-processing.
 
 **VGL significantly outperforms many state-of the art graph-processing frameworks** for modern multicore
 CPUs and NVIDIA GPUs, such as Gunrock, CuSHA, Ligra, Galois, GAPBS, as shown in [performance](./performance.html).

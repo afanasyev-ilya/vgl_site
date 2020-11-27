@@ -7,6 +7,9 @@ TSUBASA vector architecture.
 NEC SX-Aurora TSUBASA is equipped with world highest memory bandwidth of 1.2-1.5 TB/s,
 which allows to significantly accelerate solving graph-processing.
 
+VGL significantly outperforms many state-of the art graph-processing frameworks for modern multicore
+CPUs and NVIDIA GPUs, such as Gunrock, CuSHA, Ligra, Galois, GAPBS, as shown in [performance](./performance.html).
+
 VGL automatically resolves the following issues:
 
 1. automatic vectorisation of graph algorithms using vector instructions of maximal length;

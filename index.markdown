@@ -2,7 +2,7 @@
 layout: default
 ---
 
-VGL is a **high-performance graph processing framework**, designed for modern **NEC SX-Aurora 
+**VGL** is a **high-performance graph processing framework**, designed for modern **NEC SX-Aurora 
 TSUBASA** vector architecture. 
 NEC SX-Aurora TSUBASA is equipped with world highest memory bandwidth of 1.2-1.5 TB/s,
 which allows to significantly accelerate solving graph-processing.
@@ -12,15 +12,15 @@ CPUs and NVIDIA GPUs, such as Gunrock, CuSHA, Ligra, Galois, GAPBS, as shown in 
 
 **VGL automatically resolves the following issues**:
 
-1. automatic vectorisation of graph algorithms using vector instructions of maximal length;
+1. **automatic vectorisation** of graph algorithms using vector instructions of maximal length;
 
-2. parallel graph-processing using all SX-Aurora Vector cores;
+2. **parallel graph-processing** using all SX-Aurora Vector cores;
 
-3. optimal parallel workload balancing when processing different scale-free graphs;
+3. optimal parallel **workload balancing** when processing different scale-free graphs;
 
-4. efficient (coalesced) memory access pattern when loading information about graph edges;
+4. efficient (**coalesced**) memory access pattern when loading information about graph edges;
 
-5. applying graph pre-processing techniques, which allow to use LLC cache more efficiently when 
+5. applying **graph pre-processing** techniques, which allow to use LLC cache more efficiently when 
 loading information about edges.
 
 

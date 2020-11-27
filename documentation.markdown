@@ -2,8 +2,21 @@
 layout: default
 ---
 
-The VGL framework is designed to easily implement various iterative graph algorithms, such as BFS (breadth-first search), SSSP(single source shortest paths), PR(page rank), CC(connected components), SCC(strongly connected components), and many others. 
-In VGL, 4 data abstractions and 4 computational abstractions are used to express iterative graph algorithms.
+The VGL framework is designed to easily implement various iterative graph algorithms, such as:
+ 
+1. BFS (breadth-first search),
+ 
+2. SSSP(single source shortest paths),
+ 
+3. PR(page rank),
+ 
+4. CC(connected components),
+ 
+5. SCC(strongly connected components), 
+
+6. and many others. 
+
+In VGL, 4 data abstractions and 4 computational abstractions are used.
 
 ### Data abstractions
 
@@ -15,25 +28,27 @@ For directed graphs, outgoing and incoming edges are stored for each vertex.
 For undirected graphs, all edges are stored as outgoing.
 
 #### Frontier
-Frontier of graph vertices is the second important data-abstraction in VGL.
-Frontier in VGL can be one of 3 types: “all-active”, “dense”, or “mixed.” 
-“All-active” frontiers include all graph vertices and allow us to significantly 
-reduce an overhead for the frontier maintenance. “All-active” frontiers are beneficial
+Frontier of graph vertices is the second important data-abstraction in VGL. Frontier is a specific 
+subset of graph vertices, which satisfy some user-defined conditions. Many graph algorithms (such as BFS) on each 
+iterations process only specific vertices, which can be implemented in VGL using frontier abstractions.
+"
+Frontier in VGL can be one of 3 types: "all-active", "dense", or "mixed". 
+"All-active" frontiers include all graph vertices and allow us to significantly 
+reduce an overhead for the frontier maintenance. "All-active" frontiers are beneficial
 for implementing graph algorithms, in which all graph vertices and edges have to be processed 
-at each algorithm iteration (e.g. Bellman-Ford). “Dense” and “mixed” frontiers respectively represent cases 
-when most/few graph vertices belong to the frontier. A detailed description of VGL frontier 
-representations will be provided in the following sections.
+at each algorithm iteration (e.g. Bellman-Ford). "Dense" and "mixed" frontiers respectively represent cases 
+when most/few graph vertices belong to the frontier.
 
 ![Branching]({{site.data_url}}/assets/img/data_abstractions.png)
 
 #### Vertices Array
-The VerticesArray abstraction allows storing information about graph vertices,
+The VerticesArray abstraction allows to store information about graph vertices,
 for example current level of each vertex (in BFS algorithms) or current distances 
 to each vertex (in shortest paths algorithms). VerticesArray abstraction has a 
 straightforward implementation using aligned arrays.
 
 #### Edges Array
-The EdgesArray abstraction allows storing information about graph edges.
+The EdgesArray abstraction allows to store information about graph edges.
 Using EdgesArray VGL supports storing weighted graphs. This way weighted
 edges are stored as a structure of arrays, providing better memory access
 pattern for each vector instruction, which loads information about graph edges.
@@ -76,7 +91,7 @@ void advance(ExtendedCSRGraph<_TVertexValue, _TEdgeWeight> &_graph,
 
 #### Compute
 
-The compute abstraction can be used for wide range of operations over graph vertices: 
+The compute abstraction can be used for a wide range of operations over graph vertices: 
 initializing distances in shortest paths, implementing the “hook” phase in connected component
 algorithms, and many others.
 

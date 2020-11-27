@@ -55,8 +55,14 @@ To start using VGL, please, follow the steps.
 
 ##### NVIDIA GPU API
 
+To use VGL cross-platform API, compile sample applications using make -f Makefile.gpu all. 
+Compiler and CUDA installation paths can be also modified in Makefile.gpu file if necessary. 
+
 ## Start using VGL
 
 To start using VGL, please check our introduction guides: 
 
-- Developing first algorithm using VGL: [Breadth-First Search](./bfs_example.html)
+1. Developing first algorithm using VGL: [Breadth-First Search](./bfs_example.html)
+
+2. Check [documentation](./documentation.html) to learn more about VGL computational and its data abstractions.
+

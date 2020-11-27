@@ -10,7 +10,7 @@ which allows to significantly accelerate solving graph-processing.
 **VGL significantly outperforms many state-of the art graph-processing frameworks** for modern multicore
 CPUs and NVIDIA GPUs, such as Gunrock, CuSHA, Ligra, Galois, GAPBS, as shown in [performance](./performance.html).
 
-**VGL automatically resolves the following issues**:
+VGL **automatically** resolves the following issues:
 
 1. **automatic vectorisation** of graph algorithms using vector instructions of maximal length;
 
@@ -25,13 +25,13 @@ loading information about edges.
 
 
 VGL provides simple computational and data abstractions, which allow to easily express various iterative graph algorithms. 
-Many graph algorithms in VGL can be written in under 100 lines of code, while VGL user may be completely unaware how to
+Many graph algorithms in VGL can be written in **under 100 lines of code**, while VGL user may be completely unaware how to
 create efficient programs for vector systems.
 
 ### VGL cross-platform API
 
-In addition, VGL provides a unified interface for porting VGL-based implementations for other architectures with 
-high-bandwidth memory, such as NVIDIA GPUs. With cross-platform API VGL-based implementations can be launched 
+In addition, VGL provides **a unified interface for porting VGL-based implementations for other architectures with 
+high-bandwidth memory**, such as NVIDIA GPUs. With cross-platform API VGL-based implementations can be launched 
 on different architectures (currently NEC SX-Aurora TSUBASA and NVIDIA GPUs) with only minor code modifications 
 (for example inserting __device__ directive before lambda functions).
 

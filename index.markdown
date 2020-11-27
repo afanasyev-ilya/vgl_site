@@ -2,11 +2,10 @@
 layout: default
 ---
 
-VGL is a high-performance graph processing framework, designed for modern NEC SX-Aurora TSUBASA vector architecture. 
+VGL is a high-performance graph processing framework, designed for modern NEC SX-Aurora 
+TSUBASA vector architecture. 
 NEC SX-Aurora TSUBASA is equipped with world highest memory bandwidth of 1.2-1.5 TB/s,
-which allows to significantly solving various graph problems.
-VGL provides simple computational and data abstractions, which allow 
-to easily express many graph algorithms.
+which allows to significantly accelerate solving graph-processing.
 
 VGL automatically resolves the following issues:
 
@@ -14,30 +13,30 @@ VGL automatically resolves the following issues:
 
 2. parallel graph-processing using all SX-Aurora Vector cores;
 
-3. optimal workload balancing when processing various scale-free graph;
+3. optimal workload balancing when processing different scale-free graphs;
 
-4. good memory access pattern inside vector instructions;
+4. efficient (coalesced) memory access pattern when loading information about graph edges;
 
-5. applying graph pre-processing techniques in order to significantly accelerate solving various graph problems.
+5. applying graph pre-processing techniques, required to improve memory access pattern when
+loading information about graph vertices.
 
 
-Thus, VGL user is able to express many graph algorithms using only 20-100 lines of code, 
-compared to 1000+ lines of code, typical for manually-optimized (hardwired) implementations.
-In the meantime, VGL user may be completely unfamiliar with the principles of creating efficient programs for vector systems.
-
+VGL provides simple computational and data abstractions, which allow easily express many graph algorithms. Many graph algorithms in VGL can be written in under 100 lines of code, 
+and, while VGL user may be completely unaware how to create efficient programs for vector systems.
 
 ### VGL cross-platform API
 
-In addition, VGL provides a unified interface for porting VGL-based implementations for other other architectures with 
-high-bandwidth memory, such as NVIDIA GPUs. Using cross-platform API a VGL user can launch graph algorithms implementations
-on different architectures with only minor code modifications (for example inserting __device__ directive 
+In addition, VGL provides a unified interface for porting VGL-based implementations for other architectures with 
+high-bandwidth memory, such as NVIDIA GPUs. Using cross-platform API a VGL user can launch VGL-based implementations
+on different architectures (currently NVIDIA GPU and NEC SX-Aurora TSUBASA) with only minor code modifications (for example inserting __device__ directive 
 before lambda functions).
 
 ### Using VGL
 
 1. [Download](./VectorGraphLibrary.zip) and [install](./installation.html) VGL.
 
-2. Check VGL [samples(./bfs_example.html).
+2. Check VGL [samples](./bfs_example.html) to learn more about how different graph algorithms 
+can be expressed via VGL data abstractions.
 
 3. Check [documentation](./documentation.html) to learn more about VGL computational and its data abstractions.
 

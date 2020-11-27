@@ -13,23 +13,24 @@ VGL automatically resolves the following issues:
 
 2. parallel graph-processing using all SX-Aurora Vector cores;
 
-3. optimal workload balancing when processing different scale-free graphs;
+3. optimal parallel workload balancing when processing different scale-free graphs;
 
 4. efficient (coalesced) memory access pattern when loading information about graph edges;
 
-5. applying graph pre-processing techniques, required to improve memory access pattern when
-loading information about graph vertices.
+5. applying graph pre-processing techniques, which allow to use LLC cache more efficiently when 
+loading information about edges.
 
 
-VGL provides simple computational and data abstractions, which allow easily express many graph algorithms. Many graph algorithms in VGL can be written in under 100 lines of code, 
-and, while VGL user may be completely unaware how to create efficient programs for vector systems.
+VGL provides simple computational and data abstractions, which allow to easily express various iterative graph algorithms. 
+Many graph algorithms in VGL can be written in under 100 lines of code, while VGL user may be completely unaware how to
+create efficient programs for vector systems.
 
 ### VGL cross-platform API
 
 In addition, VGL provides a unified interface for porting VGL-based implementations for other architectures with 
-high-bandwidth memory, such as NVIDIA GPUs. Using cross-platform API a VGL user can launch VGL-based implementations
-on different architectures (currently NVIDIA GPU and NEC SX-Aurora TSUBASA) with only minor code modifications (for example inserting __device__ directive 
-before lambda functions).
+high-bandwidth memory, such as NVIDIA GPUs. With cross-platform API VGL-based implementations can be launched 
+on different architectures (currently NEC SX-Aurora TSUBASA and NVIDIA GPUs) with only minor code modifications 
+(for example inserting __device__ directive before lambda functions).
 
 ### Using VGL
 

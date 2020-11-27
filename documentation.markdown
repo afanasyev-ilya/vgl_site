@@ -20,14 +20,14 @@ In VGL, 4 data abstractions and 4 computational abstractions are used.
 
 ### Data abstractions
 
-#### Graph
+#### 1. Graph
 A graph is the main data-abstraction of the VGL framework. Graphs in VGL are stored in the optimized and preprocessed format (VectCSR),
 which is based on the CSR (Compressed Sparse Row) representation. 
 The VGL framework provides a convenient interface for working with both directed and undirected graphs.
 For directed graphs, outgoing and incoming edges are stored for each vertex.
 For undirected graphs, all edges are stored as outgoing.
 
-#### Frontier
+#### 2. Frontier
 Frontier of graph vertices is the second important data-abstraction in VGL. Frontier is a specific 
 subset of graph vertices, which satisfy some user-defined conditions. Many graph algorithms (such as BFS) on each 
 iterations process only specific vertices, which can be implemented in VGL using frontier abstractions.
@@ -41,13 +41,13 @@ when most/few graph vertices belong to the frontier.
 
 ![Branching]({{site.data_url}}/assets/img/data_abstractions.png)
 
-#### Vertices Array
+#### 3 Vertices Array
 The VerticesArray abstraction allows to store information about graph vertices,
 for example current level of each vertex (in BFS algorithms) or current distances 
 to each vertex (in shortest paths algorithms). VerticesArray abstraction has a 
 straightforward implementation using aligned arrays.
 
-#### Edges Array
+#### 4. Edges Array
 The EdgesArray abstraction allows to store information about graph edges.
 Using EdgesArray VGL supports storing weighted graphs. This way weighted
 edges are stored as a structure of arrays, providing better memory access
@@ -56,7 +56,7 @@ pattern for each vector instruction, which loads information about graph edges.
 
 ## Computational abstractions
 
-#### Advance
+#### 1. Advance
 
 The advance abstractions is the main tool of traversing graph in VGL. 
 
@@ -89,7 +89,7 @@ void advance(ExtendedCSRGraph<_TVertexValue, _TEdgeWeight> &_graph,
              VertexPostprocessOperation &&vertex_postprocess_op);
 ```
 
-#### Compute
+#### 2. Compute
 
 The compute abstraction can be used for a wide range of operations over graph vertices: 
 initializing distances in shortest paths, implementing the “hook” phase in connected component
@@ -108,7 +108,7 @@ void compute(ExtendedCSRGraph<_TVertexValue, _TEdgeWeight> &_graph,
              ComputeOperation &&compute_op);
 ```
 
-#### Reduce
+#### 3. Reduce
 This Reduce abstraction can be used for a large number of applications: estimating future frontier size in BFS,
 calculating dangling nodes inputs in page rank, etc. The conventional frameworks, such as Gunrock, implement 
 functionality of the reduce abstraction using a combination of the compute abstraction
@@ -141,7 +141,7 @@ _T reduce(VectCSRGraph &_graph,
           REDUCE_TYPE _reduce_type);
 ```
 
-#### Generate New Frontier
+#### 4. Generate New Frontier
 
 The generate new frontier abstraction allows a user to create a new subset of vertices,
 which can be later processed by other abstractions (advance, compute, reduce). 

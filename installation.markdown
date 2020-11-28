@@ -9,9 +9,10 @@ Please, use the following installation instructions to start using VGL.
 In order to use VGL you need to install:
 * GCC compiler, version >= 8.3.0
 * NCC compiler, version >= 3.1.0
-* ASL (Advanced Scientific Library), version 2.0.0
+* ASL (Advanced Scientific Library), version >= 2.1.0
 
 * _(additional for GPU API)_ In order to use VGL GPU API you must also have CUDA toolkit, version >= 10.0 
+* _(additional for automatic benchmarking)_ GNU bash, version >= 4.0
 
 ## Installation
 

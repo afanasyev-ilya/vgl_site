@@ -14,19 +14,28 @@ VGL provides several highly-optimised graph applications, aimed to solve the fol
 
 5. Strongly Connected Components (SCC)
 
-Implementations of algorithms are located in _./algorithms_ folder, while executables in the _./apps_ folder. These applications can be compiled and executed as follows.
+Implementations of algorithms are located in _./algorithms_ folder, while executables 
+are located in the _./apps_ folder. 
+
+| Application | Makefile target name | NEC SX-Aurora TSUBASA executable | NVIDIA GPU executable |
+|-------|--------|---------|
+| Breadth-First Search | bfs| bfs_sx | bfs_cu |
+| Connected Components | cc | cc_sx | cc_cu |
+| Page Rank | pr | pr_sx | pr_cu |
+| Single Source Shortest Paths | sssp | sssp_sx | sssp_cu |
+| Strongly Connected Components | scc | scc_sx | scc_cu |
 
 ### Compilation
 
 It is possible to compile either all applications at once:
 
-cd apps
+> cd apps
 
-make -f Makefile.nec all
+> make -f Makefile.nec all
 
-or:
+or only a specific application:
 
-make -f Makefile.nec cc bfs
+> make -f Makefile.nec bfs
 
 ### Running VGL applications
 
@@ -40,10 +49,23 @@ make -f Makefile.nec cc bfs
 | -type | [rmat, ru] | Generate synthetic graph of RMAT or uniform-random type |
 
 For example, Breadth-First application can be launched on synthetic RMAT graph with 1 million vertices and 32 million edges:
-./bfs_sx -s 20 -e 32 -type rmat -it 10 -check
+
+> cd bin
+
+> ./bfs_sx -s 20 -e 32 -type rmat -it 10 -check
 
 or 
 
-./bfs_sx -load ./input_graphs/soc_lj.vgraph -it 10 -check
+> ./bfs_sx -load ./input_graphs/soc_lj.vgraph -it 10 -check
+
+In addition, some applications have additional flags, which typically allow to choose the algorithms used.
+
+**SSSP** : -all-active, -partial-active, -push, -pull;
+
+**CC** : -shiloach_vishkin, -bfs_based;
+
+**BFS** : -top-down (-td), -direction-optimizing (-do);
 
 ### Converting graphs into VGL format
+
+VGL provides ./

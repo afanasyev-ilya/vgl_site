@@ -5,7 +5,7 @@ layout: default
 VGL provides bash scripts, which automatically benchmark different graph applications (BFS, PR, SSSP, CC, etc.), implemented in VGL.
 In order to benchmark all applications, the following commands should be used:
 
-1. **cd VectorGraphLibrary/apps/bin**
+1. > **cd VectorGraphLibrary/apps/bin**
 
 2. **chmod 777 ./testing_scripts/**
 

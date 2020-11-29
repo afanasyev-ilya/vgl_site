@@ -41,14 +41,14 @@ or only a specific application:
 
 | Flag | Additional arguments | Description | 
 |-------|--------|---------|
-| -load | ./path/to/file/in/vgraph/format | Execute the application on graph in th provided file. If -load flag is not specified, a synthetic graph is generated.   |
-| -check | none | Compare computational results of optimized parallel algorithm with its sequential counterpart. |
+| -load | ./path/to/file/in/vgraph/format | Execute the application on graph in the provided file. If -load flag is not specified, a synthetic RMAT graph with 2^10 vertices and 2^14 edges is generated.   |
+| -check | none | Compare results, calculated by optimized parallel algorithm with a sequential sequential version of similar algorithm. |
 | -it | [n - integer number] | Execute n iterations of the algorithm. |
 | -s | [s - integer number] | Set the amount of vertices in generated synthetic graph equal to 2^s |
 | -e | [e - integer number] | Set the amount of edges in generated synthetic graph equal to e*2^s |
-| -type | [rmat, ru] | Generate synthetic graph of RMAT or uniform-random type |
+| -type | [rmat, ru] | Generate synthetic graph of a specified type (RMAT or uniform random) |
 
-For example, Breadth-First application can be launched on synthetic RMAT graph with 1 million vertices and 32 million edges:
+For example, Breadth-First application can be launched on synthetic RMAT graph with 1 million vertices and 32 million edges in the following way:
 
 > cd bin
 
@@ -58,7 +58,7 @@ or
 
 > ./bfs_sx -load ./input_graphs/soc_lj.vgraph -it 10 -check
 
-In addition, some applications have additional flags, which typically allow to choose the algorithms used.
+In addition, some applications have additional flags, which allow to choose different parallel algorithms.
 
 **SSSP** : -all-active, -partial-active, -push, -pull;
 
@@ -68,8 +68,8 @@ In addition, some applications have additional flags, which typically allow to c
 
 ### Converting graphs into VGL format
 
-VGL provides _./create_vgl_graphs_ program, which allows to convert graph into into VGL representation and save it as
-a binary file. _./create_vgl_graphs_ program should be executed on Vector Host, and has the following input flags and arguments:
+VGL provides _./create_vgl_graphs_ program, which allows to convert a graph into VGL representation and save it as
+a binary file. _./create_vgl_graphs_ program should be executed on Vector Host, and has the following flags and arguments:
 
 | Flag | Additional arguments | Description | 
 |-------|--------|---------|
@@ -78,7 +78,7 @@ a binary file. _./create_vgl_graphs_ program should be executed on Vector Host, 
 | -type | [rmat, ru] | Generate synthetic graph of RMAT or uniform-random type |
 | -format | [vect_csr] | Specify format of the output graph. By default VGL binary format (vect_csr) is used. |
 | -file | /path/to/output/file | Specify file name of the output graph |
-| -convert | /path/to/text/file/with/graph/in/EL/format/ | Convert external graph (for example from SNAP collection) into the specified output format |
+| -convert | /path/to/text/file/with/graph/in/EL/format/ | Convert external graph from the provided .txt file (for example from downloaded SNAP collection) into the specified output format. If this option is specified, synthetic graph is NOT generated. |
 
 For example, LiveJournal graph can nbe imported from SNAP using the following commands:
 

@@ -14,32 +14,36 @@ VGL provides several highly-optimised graph applications, aimed to solve the fol
 
 5. Strongly Connected Components (SCC)
 
-These applications can be compiled and executed as follows.
+Implementations of algorithms are located in _./algorithms_ folder, while executables in the _./apps_ folder. These applications can be compiled and executed as follows.
 
 ### Compilation
 
 It is possible to compile either all applications at once:
 
+cd apps
+
 make -f Makefile.nec all
 
-Or only the specific ones:
+or:
 
 make -f Makefile.nec cc bfs
 
-### Execution
+### Running VGL applications
 
-| flag | description | arguments |
+| Flag | Additional arguments | Description | 
 |-------|--------|---------|
-| -load | ./path/to/file/in/vgraph/format | Load graph from  |
+| -load | ./path/to/file/in/vgraph/format | Execute the application on graph in th provided file. If -load flag is not specified, a synthetic graph is generated.   |
 | -check | none | Compare computational results of optimized parallel algorithm with its sequential counterpart. |
-| -it | [number of iterations] | fuji |
+| -it | [n - integer number] | Execute n iterations of the algorithm. |
+| -s | [s - integer number] | Set the amount of vertices in generated synthetic graph equal to 2^s |
+| -e | [e - integer number] | Set the amount of edges in generated synthetic graph equal to e*2^s |
+| -type | [rmat, ru] | Generate synthetic graph of RMAT or uniform-random type |
 
-### Exporting graph from file
+For example, Breadth-First application can be launched on synthetic RMAT graph with 1 million vertices and 32 million edges:
+./bfs_sx -s 20 -e 32 -type rmat -it 10 -check
 
-Each application launched on graph, loaded from file:
+or 
 
-./bfs_sx -load ./input_graphs/rmat_20_32.vgraph -it 10 -check
+./bfs_sx -load ./input_graphs/soc_lj.vgraph -it 10 -check
 
-Or it can automatically generate a synthetic graph of the required type:
-
-./bfs_sx -load ./input_graphs/
+### Converting graphs into VGL format

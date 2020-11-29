@@ -24,7 +24,7 @@ which can be imported in excel.
 
 ![Branching]({{site.data_url}}/assets/img/check_table.png)
 
-5) **./testing_scripts/benchmark_all_apps.sh**
+6. **./testing_scripts/benchmark_all_apps.sh**
 This script benchmarks all graph applications, currently implemented in VGL.
 As an output it generates nec_stats.csv file, which can be imported in excel.
 

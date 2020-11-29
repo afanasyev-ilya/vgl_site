@@ -68,4 +68,26 @@ In addition, some applications have additional flags, which typically allow to c
 
 ### Converting graphs into VGL format
 
-VGL provides ./
+VGL provides _./create_vgl_graphs_ program, which allows to convert graph into into VGL representation and save it as
+a binary file. _./create_vgl_graphs_ program should be executed on Vector Host, and has the following input flags and arguments:
+
+| Flag | Additional arguments | Description | 
+|-------|--------|---------|
+| -s | [s - integer number] | Set the amount of vertices in generated synthetic graph equal to 2^s |
+| -e | [e - integer number] | Set the amount of edges in generated synthetic graph equal to e*2^s |
+| -type | [rmat, ru] | Generate synthetic graph of RMAT or uniform-random type |
+| -format | [vect_csr] | Specify format of the output graph. By default VGL binary format (vect_csr) is used. |
+| -file | /path/to/output/file | Specify file name of the output graph |
+| -convert | /path/to/text/file/with/graph/in/EL/format/ | Convert external graph (for example from SNAP collection) into the specified output format |
+
+For example, LiveJournal graph can nbe imported from SNAP using the following commands:
+
+> wget https://snap.stanford.edu/data/soc-LiveJournal1.txt.gz --no-check-certificate
+>
+> gunzip soc-LiveJournal1.txt.gz
+>
+> ./create_vgl_graphs_sx -convert ./source_graphs/soc-LiveJournal1.txt -file ./input_graphs/soc_lj -format vect_csr"
+
+Synthetic RMAT graph with 1 million vertices and 32 million edges can be generated in the following way: 
+
+> ./create_vgl_graphs_sx -s 20 -e 32 -type rmat -file ./input_graphs/rmat_20_32 -format vect_csr"

@@ -86,8 +86,8 @@ For example, LiveJournal graph can nbe imported from SNAP using the following co
 >
 > gunzip soc-LiveJournal1.txt.gz
 >
-> ./create_vgl_graphs_sx -convert ./source_graphs/soc-LiveJournal1.txt -file ./input_graphs/soc_lj -format vect_csr"
+> ./create_vgl_graphs_sx -convert ./source_graphs/soc-LiveJournal1.txt -file ./input_graphs/soc_lj -format vect_csr
 
 Synthetic RMAT graph with 1 million vertices and 32 million edges can be generated in the following way: 
 
-> ./create_vgl_graphs_sx -s 20 -e 32 -type rmat -file ./input_graphs/rmat_20_32 -format vect_csr"
+> ./create_vgl_graphs_sx -s 20 -e 32 -type rmat -file ./input_graphs/rmat_20_32 -format vect_csr

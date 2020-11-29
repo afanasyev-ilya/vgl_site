@@ -18,9 +18,23 @@ These applications can be compiled and executed as follows.
 
 ### Compilation
 
+It is possible to compile either all applications at once:
+
 make -f Makefile.nec all
 
-### BFS
+Or only the specific ones:
+
+make -f Makefile.nec cc bfs
+
+### Execution
+
+| flag | description | arguments |
+|-------|--------|---------|
+| -load | ./path/to/file/in/vgraph/format | Load graph from  |
+| -check | none | Compare computational results of optimized parallel algorithm with its sequential counterpart. |
+| -it | [number of iterations] | fuji |
+
+### Exporting graph from file
 
 Each application launched on graph, loaded from file:
 

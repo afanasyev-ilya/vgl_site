@@ -21,11 +21,9 @@ them into preprocessed VGL format. VGL graphs are saved into ./apps/bin/input_gr
 5. **./testing_scripts/verify_all_apps.sh**
 This script verifies the correctness of VGL installation. As an output it generates nec_check.csv file,
 which can be imported in excel.
-
 ![Branching]({{site.data_url}}/assets/img/check_table.png)
 
 6. **./testing_scripts/benchmark_all_apps.sh**
 This script benchmarks all graph applications, currently implemented in VGL.
 As an output it generates nec_stats.csv file, which can be imported in excel.
-
 ![Branching]({{site.data_url}}/assets/img/performance_table.png)

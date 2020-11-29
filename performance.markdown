@@ -12,10 +12,10 @@ graph-processing frameworks and libraries.
 ![Branching]({{site.data_url}}/assets/img/vgl_sssp_perf.png)
 
 **Connected Components performance**
-![Branching]({{site.data_url}}/assets/img/vgl_cc_perf.png)
+![Branching]({{site.data_url}}/assets/img/vgl_bfs_perf.png)
 
 **Breadth-First Search performance**
-![Branching]({{site.data_url}}/assets/img/vgl_bfs_perf.png)
+![Branching]({{site.data_url}}/assets/img/vgl_cc_perf.png)
 
 VGL achieves up to 14 times acceleration compared to multicore CPU implementations, such as 
 Ligra, Galois, and GAPBS graph libraries. This acceleration can be explained by different peak 

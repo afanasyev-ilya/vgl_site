@@ -31,3 +31,7 @@ which can be imported in excel.
 This script benchmarks all graph applications, currently implemented in VGL.
 As an output it generates nec_stats.csv file, which can be imported in excel.
 ![alt text]({{site.data_url}}/assets/img/performance_table.png)
+
+7. >  ./testing_scripts/benchmark_specific_app.sh ./pr_cu "-it 10 -push -device 0"
+
+This script benchmarks a specific application, passed as an argument, together with its input parameters.

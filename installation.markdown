@@ -6,7 +6,6 @@ Please, use the following installation instructions to start using VGL.
 
 ## Requirements
 
-In order to use VGL you need to install:
 * GCC compiler, version >= 8.3.0
 * NCC compiler, version >= 3.1.0
 * ASL (Advanced Scientific Library), version >= 2.1.0
@@ -17,8 +16,6 @@ In order to use VGL you need to install:
 ## Installation
 
 ##### NEC SX-Aurora TSUBASA API
-To start using VGL, please, follow the steps.
-
 1. Download VGL:
 
     - source files from GitHub:
